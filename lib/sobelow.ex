@@ -487,7 +487,9 @@ defmodule Sobelow do
     IO.inspect(cfile, label: "Sobelow skips file")
 
     if File.exists?(cfile) do
+      IO.puts("file does exist")
       {:ok, iofile} = :file.open(cfile, [:read])
+      IO.inspect(iofile, label: "iofile")
 
       :file.read_line(iofile) |> load_ignored_fingerprints(iofile)
       :file.close(iofile)
