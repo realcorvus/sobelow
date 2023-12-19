@@ -497,7 +497,7 @@ defmodule Sobelow do
   end
 
   defp load_ignored_fingerprints({:ok, fingerprint}, iofile) do
-    to_string(fingerprint) |> String.trim() |> Fingerprint.put_ignore()
+    to_string(fingerprint) |> String.trim() |> IO.inspect() |> Fingerprint.put_ignore()
     :file.read_line(iofile) |> load_ignored_fingerprints(iofile)
   end
 
