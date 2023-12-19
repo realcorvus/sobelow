@@ -20,6 +20,7 @@ defmodule Sobelow.Fingerprint do
   end
 
   def put(fingerprint) do
+    IO.inspect(fingerprint, label: "Fingerprint.put call")
     Agent.update(__MODULE__, fn {total_set, ignore_set} ->
       {MapSet.put(total_set, fingerprint), ignore_set}
     end)
