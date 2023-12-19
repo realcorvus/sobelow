@@ -27,7 +27,7 @@ defmodule Sobelow.Fingerprint do
 
   def put_ignore(fingerprint) do
     Agent.update(__MODULE__, fn {total_set, ignore_set} ->
-      {total_set, MapSet.put(ignore_set, fingerprint)}
+      {total_set, IO.inspect(MapSet.put(ignore_set, fingerprint))}
     end)
   end
 
