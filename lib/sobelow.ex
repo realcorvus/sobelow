@@ -491,7 +491,7 @@ defmodule Sobelow do
       {:ok, iofile} = :file.open(cfile, [:read])
       IO.inspect(iofile, label: "iofile")
 
-      :file.read_line(iofile) |> load_ignored_fingerprints(iofile)
+      :file.read_line(iofile) |> IO.inspect() |> load_ignored_fingerprints(iofile)
       :file.close(iofile)
     end
   end
