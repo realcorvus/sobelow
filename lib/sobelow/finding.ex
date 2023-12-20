@@ -53,6 +53,7 @@ defmodule Sobelow.Finding do
       |> Utils.normalize_path()
 
     [finding.type, finding.vuln_source, filename, finding.vuln_line_no]
+    |> IO.inspect()
     |> :erlang.term_to_binary()
     |> :erlang.md5()
     |> Base.encode16()
