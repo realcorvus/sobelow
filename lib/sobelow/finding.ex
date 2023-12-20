@@ -55,7 +55,7 @@ defmodule Sobelow.Finding do
     [finding.type, finding.vuln_source, filename, finding.vuln_line_no]
     |> IO.inspect()
     |> :erlang.term_to_binary()
-    |> IO.inspect()
+    |> IO.inspect(limit: :infinity)
     |> :erlang.md5()
     |> Base.encode16()
   end
